@@ -1,6 +1,12 @@
-#WebIM采用PHP+Swoole + redis + Mysql + comet + Webrtc等架构#
 ***
-**在线体验地址**[  https://51zhibo.top](https://51zhibo.top/)
+WebIM视屏聊天系统采用PHP+Swoole + redis + Mysql + comet + Webrtc等技术架构  
+========
+***
+**在线体验地址**[  https://51zhibo.top](https://51zhibo.top/)     
+***
+***
+**如有疑问可以加QQ群：274904994**  
+![二维码](https://avatars3.githubusercontent.com/u/26708405?s=460&v=4)  
 ***
 IM 篇 聊天部分
 ========
@@ -203,7 +209,7 @@ Socket服务器：此项目中浏览器的WebSocket客户端连接的服务器�
 WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支持此项目中有提供flash版本的实现。
   
 ***
-Webrtc 篇 音视频连麦部分 （重点），
+WebRtc篇 音视频连麦部分 （重点难点部分）
 ========
    *  ###一、官方网站：[ http://webrtc.org](http://webrtc.org)（官网还是最权威的）      
     `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）    
@@ -333,7 +339,7 @@ IETF协议http://datatracker.ietf.org/wg/rtcweb/documents/
 第十四篇从原文11.1.1 Attributes开始，接前一篇，继续描述DataChannel的属性等。：http://www.iwebrtc.com/blog/webrtc-1-0-real-time-communication-between-browsers-14/  
 第十五篇从原文12. Garbage collection开始，垃圾搜集策略以及事件汇总。：http://www.iwebrtc.com/blog/webrtc-1-0-real-time-communication-between-browsers-15/  
 第十六篇从原文15. Security Considerations开始，描述安全机制、修改日志、致谢、参考（基本上这一篇没怎么翻译，大部分可以直接无视。修改日志可以扫一眼，参考内容可以浏览一下）。：http://www.iwebrtc.com/blog/webrtc-1-0-real-time-communication-between-browsers-16/  
-*  ### 十、IETF：Web Real-Time Communication (WebRTC): Media Transport and Use of RTP 标准（译）  
+*  ### 十、IETF：Web Real-Time Communication (WebRTC): Media Transport and Use of RTP （译）  
   
 [中文版(一.介绍）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-01/)  
 
