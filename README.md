@@ -1,15 +1,15 @@
 # WebRTC_IM
 HI WebRTC IM 聊天系统。
--------------------------------------------------------webrtc学习线路--------------------------------------------------------------------
-一、官方资源
-官方网站：http://webrtc.org（官网还是最权威的）
-2013谷歌I/O大会对WebRTC的介绍：视频（https://www.youtube.com/watch?v=p2HzZkd2A40），ppt(http://io13webrtc.appspot.com/#1)（讲的不错）
-2012谷歌I/O大会对WebRTC的介绍：http://youtu.be/E8C8ouiXHHk
-WebRTC官方源码样例（不含移动端）：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）
-WebRTC在线演示效果：http://webrtc.github.io/samples（可以清楚的看到每个接口是怎样被调用的）
-二、初学者入门
-官方推荐的入门文章：http://html5rocks.com/en/tutorials/webrtc/basics（个人感觉讲的有点绕，英文不好估计很难理解）
-使用WebRTC搭建前端视频聊天室——入门篇：http://chinawebrtc.org/?p=271（推荐这篇中文的入门，讲的很细，它的三篇后续教程也很值得一看）
+#WebRtc学习路线#
+-一、官方资源 
+官方网站：[http://webrtc.org](http://webrtc.org（官网还是最权威的）)  
+2013谷歌I/O大会对WebRTC的介绍：视频（https://www.youtube.com/watch?v=p2HzZkd2A40），ppt(http://io13webrtc.appspot.com/#1)（讲的不错）  
+2012谷歌I/O大会对WebRTC的介绍：http://youtu.be/E8C8ouiXHHk  
+WebRTC官方源码样例（不含移动端）：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
+WebRTC在线演示效果：http://webrtc.github.io/samples（可以清楚的看到每个接口是怎样被调用的）  
+-二、初学者入门  
+官方推荐的入门文章：http://html5rocks.com/en/tutorials/webrtc/basics（个人感觉讲的有点绕，英文不好估计很难理解）  
+使用WebRTC搭建前端视频聊天室——入门篇：http://chinawebrtc.org/?p=271（推荐这篇中文的入门，讲的很细，它的三篇后续教程也很值得一看）  
 WebRTC体系结构：http://chinawebrtc.org/?p=338（对整体的把握是很重要的）
 通过WebRTC实现实时视频通信：http://chinawebrtc.org/?p=462 （不错的教程）
 官方编译教程：（理论后，开始实践）
@@ -30,7 +30,7 @@ Play With WebRTC：http://chinawebrtc.org/?p=530
 手把手教程：
 http://io2014codelabs.appspot.com/static/codelabs/webrtc-file-sharing/#1
 https://bitbucket.org/webrtc/codelab
-三、高级教程
+-三、高级教程
 getUserMedia解释：http://www.html5rocks.com/en/tutorials/getusermedia/intro/
 信令机制的解释：http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
 使用WebRTC搭建前端视频聊天室——信令篇：http://chinawebrtc.org/?p=260
@@ -49,7 +49,7 @@ WebRTC源码分析6——AudioProcessing的使用：http://chinawebrtc.org/?p=38
 webrtc 的回声抵消(aec、aecm)算法简介：http://chinawebrtc.org/?p=382
 建立一个WebRtc的Android客户端：http://chinawebrtc.org/?p=260
 WebRtc常见问题集锦：http://chinawebrtc.org/?p=327
-四、源码或示例
+-四、源码或示例
 这里面应该是最全最详细的了：https://www.webrtc-experiment.com/
 这里面也有不少：http://simpl.info/
 getUserMedia:
@@ -86,7 +86,7 @@ https://janus.conf.meetecho.com/(可fork on GitHub)
 goToMeeting在线版：https://free.gotomeeting.com/
 婴儿监视器：https://webrtchacks.com/baby-motion-detector/
 电话通讯：http://zingaya.com/
-五、一些api及类库
+-五、一些api及类库
 官方的PeerConnection的api：http://www.webrtc.org/blog/api-description
 官方其它的一些的api：http://www.webrtc.org/native-code/native-apis
 libjingle的文档介绍https://developers.google.com/talk/libjingle/developer_guide?csw=1
@@ -101,17 +101,17 @@ The PeerJS library：简化了WebRTC传输数据的过程http://peerjs.com/
 头部轨迹识别的js类库：https://github.com/auduno/headtrackr/；demo,http://simpl.info/headtrackr/
 http://rtc.io/
 开发WebRTC的工具列表（不能更全）：https://webrtchacks.com/vendor-directory/
-六、一些书籍
+-六、一些书籍
 WebRTC-APIs and RTCWEB Protocols of the HTML5 Real-Time Web, Third Edition：http://webrtcbook.com/
 Real-Time Communication with WebRTC by Salvatore Loreto & Simon Pietro Romano：https://bloggeek.me/book-webrtc-salvatore-simon/
 Getting Started with WebRTC：https://www.packtpub.com/web-development/getting-started-webrtc
-七、标准及协议
+-七、标准及协议
 WebRTC工作小组：http://www.w3.org/2011/04/webrtc/
 w3c规定的WebRTC协议1.0http://www.w3.org/TR/webrtc/
 媒体捕捉及媒体流协议：http://www.w3.org/TR/mediacapture-streams/
 IETF协议http://datatracker.ietf.org/wg/rtcweb/documents/
 各大浏览器是否支持：http://iswebrtcreadyyet.com/
-八、其它
+-八、其它
 国外Google group：https://groups.google.com/forum/?fromgroups#!forum/discuss-webrtc
 国内china WebRTC社区：http://chinawebrtc.org/
 九、WebRTC 1.0: Real-time Communication Between Browsers 协议文档中文版汇总
