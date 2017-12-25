@@ -2,7 +2,7 @@
 
 HI WebRTC IM 聊天系统。
   
-*  ###一、官方资源
+*  ###一、官方资源  
    **官方网站**：[http://webrtc.org](http://webrtc.org（官网还是最权威的）)    
     `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）  
     `2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
