@@ -1,9 +1,11 @@
-# WebRTC_IM #
-
-WebIM
+#WebIM采用PHP+Swoole + redis + Mysql + comet + Webrtc等架构#
+***
+**在线体验地址**[https://51zhibo.top](https://51zhibo.top/)
+***
+IM 篇 
 ========
 
-使用PHP+Swoole实现的网页即时聊天工具，在线体验地址：[https://51zhibo.top](https://51zhibo.top/)
+使用PHP+Swoole实现的网页即时聊天工具，
 
 * 全异步非阻塞Server，可以同时支持数百万TCP连接在线
 * 基于websocket+flash_websocket支持所有浏览器/客户端/移动端
@@ -81,7 +83,7 @@ server {
     }
 }
 ```
-注意：https下必须采取wss  So-有两种方案 1.采用nginx 反向代理4431端口 swoole 的端口和4431进行通讯。2.swoole 确认是否启用了openssl，是否在编译时加入了--enable-openssl的支持,然后在set 证书路径即可。两种方案选择其一就好，不过第一种方案有个潜在神坑就是你通过反向代理拿不到真实的IP地址了,这点值得注意，Nginx有办法拿到真实的ip，不懂可以私聊我，光wss的坑太多了就不一一说了。
+注意：https下必须采取wss  So-有两种方案 1.采用nginx 反向代理4431端口 swoole 的端口和4431进行通讯。2.swoole 确认是否启用了openssl，是否在编译时加入了--enable-openssl的支持,然后在set 证书路径即可。两种方案选择其一就好，不过第一种方案有个潜在神坑就是你通过反向代理拿不到真实的IP地址了,这点值得注意，Nginx有办法拿到真实的ip，不懂可以私聊我，光wss的坑太多了就不一一说了。  
 __4. 修改配置__
 
 * 配置`configs/db.php`中数据库信息，将聊天记录存储到MySQL中
