@@ -6,6 +6,8 @@ WebIM视屏聊天系统采用PHP+Swoole + redis + Mysql + comet + Webrtc等技�
 **如有疑问可以加QQ群：274904994**  
 ![二维码](https://avatars3.githubusercontent.com/u/26708405?s=64&v=4) 
 ***
+演示效果: ![演示效果](http://group.store.qq.com/qun/M5CXvbshIHEJdIzwzpGpEg!!/V3tordiEP8SQVrQ8KAM/800?w5=1319&h5=640&rf=viewer_421)
+***
 IM 篇 聊天部分
 ========
 
