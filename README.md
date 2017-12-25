@@ -83,7 +83,7 @@ server {
     }
 }
 ```
-注意：https下必须采取wss  So-有两种方案 1.采用nginx 反向代理4431端口 swoole 的端口和4431进行通讯。2.swoole 确认是否启用了openssl，是否在编译时加入了--enable-openssl的支持,然后在set 证书路径即可。两种方案选择其一就好，不过第一种方案有个潜在神坑就是你通过反向代理拿不到真实的IP地址了,这点值得注意，Nginx有办法拿到真实的ip，不懂可以私聊我，光wss的坑太多了就不一一说了。  
+`**注意：https下必须采取wss  So-有两种方案 1.采用nginx 反向代理4431端口 swoole 的端口和4431进行通讯。2.swoole 确认是否启用了openssl，是否在编译时加入了--enable-openssl的支持,然后在set 证书路径即可。两种方案选择其一就好，不过第一种方案有个潜在神坑就是你通过反向代理拿不到真实的IP地址了,这点值得注意，Nginx有办法拿到真实的ip，不懂可以私聊我，光wss的坑太多了就不一一说了。**`  
 __4. 修改配置__
 
 * 配置`configs/db.php`中数据库信息，将聊天记录存储到MySQL中
@@ -203,7 +203,9 @@ Socket服务器：此项目中浏览器的WebSocket客户端连接的服务器�
 WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支持此项目中有提供flash版本的实现。
   
 ***
-   **一、官方网站**：[http://webrtc.org](http://webrtc.org（官网还是最权威的）)    
+WebRtc篇
+***
+   **一、官方网站**：[http://webrtc.org](http://webrtc.org（官网还是最权威的）)    
     `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）  
     `2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
     **WebRTC官方源码样例（不含移动端）**：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
