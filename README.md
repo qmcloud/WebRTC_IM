@@ -10,9 +10,9 @@ HI WebRTC IM 聊天系统。
     **WebRTC在线演示效果**：[（可以清楚的看到每个接口是怎样被调用的）](http://webrtc.github.io/samples)  
 *  ### 二、初学者入门
 **官方推荐的入门文章**：http://html5rocks.com/en/tutorials/webrtc/basics（个人感觉讲的有点绕，英文不好估计很难理解）  
-**使用WebRTC搭建前端视频聊天室——入门篇**：http://chinawebrtc.org/?p=271（推荐这篇中文的入门，讲的很细，它的三篇后续教程也很值得一看）  
-**WebRTC体系结构**：http://chinawebrtc.org/?p=338（对整体的把握是很重要的）
-通过WebRTC实现实时视频通信：http://chinawebrtc.org/?p=462 （不错的教程）  
+**使用WebRTC搭建前端视频聊天室——入门篇**：[http://chinawebrtc.org/?p=271](http://chinawebrtc.org/?p=271)（推荐这篇中文的入门，讲的很细，它的三篇后续教程也很值得一看）  
+**WebRTC体系结构**：[http://chinawebrtc.org/?p=338](http://chinawebrtc.org/?p=338)（对整体的把握是很重要的）
+通过WebRTC实现实时视频通信：[http://chinawebrtc.org/?p=462](http://chinawebrtc.org/?p=462) （不错的教程）  
 `**官方编译教程**`：（理论后，开始实践）  
 **[js]** http://www.webrtc.org/native-code/development  
 **[android]** http://www.webrtc.org/native-code/android  
@@ -131,41 +131,41 @@ IETF协议http://datatracker.ietf.org/wg/rtcweb/documents/
 第十四篇从原文11.1.1 Attributes开始，接前一篇，继续描述DataChannel的属性等。：http://www.iwebrtc.com/blog/webrtc-1-0-real-time-communication-between-browsers-14/  
 第十五篇从原文12. Garbage collection开始，垃圾搜集策略以及事件汇总。：http://www.iwebrtc.com/blog/webrtc-1-0-real-time-communication-between-browsers-15/  
 第十六篇从原文15. Security Considerations开始，描述安全机制、修改日志、致谢、参考（基本上这一篇没怎么翻译，大部分可以直接无视。修改日志可以扫一眼，参考内容可以浏览一下）。：http://www.iwebrtc.com/blog/webrtc-1-0-real-time-communication-between-browsers-16/  
-*  ### 十、IETF：Web Real-Time Communication (WebRTC): Media Transport and Use of RTP 标准（译）
+*  ### 十、IETF：Web Real-Time Communication (WebRTC): Media Transport and Use of RTP 标准（译）  
   
-中文版(一.介绍）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-01/  
+[中文版(一.介绍）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-01/)  
 
-中文版(二.基本原理）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-02/  
+[中文版(二.基本原理）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-02/)  
  
-中文版(三.术语）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-03/  
+[中文版(三.术语）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-03/)  
 
-中文版(四.核心协议）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-04/  
+[中文版(四.核心协议）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-04/)  
 
-中文版(五.webrtc所使用RTP扩展）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-05/  
+[中文版(五.webrtc所使用RTP扩展）:](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-05/)  
 
-中文版(六.增强传输可靠性）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-06/  
+[中文版(六.增强传输可靠性）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-06/)  
 
-中文版(七.速率控制和媒体适配）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-07/  
+[中文版(七.速率控制和媒体适配）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-07/)  
 
-中文版(八.性能监控）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-08/  
+[中文版(八.性能监控）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-08/)  
 
-中文版(九.未来扩展）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-09/  
+[中文版(九.未来扩展）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-09/)  
 
-中文版(十.信号考虑）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-10/  
+[中文版(十.信号考虑）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-10/)  
 
-中文版(十一.WebRTC API的考虑）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-11/  
+[中文版(十一.WebRTC API的考虑）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-11/)  
 
-中文版(十二.RTP实现）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-12/  
+[中文版(十二.RTP实现）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-12/)  
 
-中文版(十三，遗留问题）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-13/  
+[中文版(十三，遗留问题）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-13/)  
 
-中文版(十五，安全考虑）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15/  
+[中文版(十五，安全考虑）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15/)  
 
-中文版(十六，致谢和参考资料）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15-2/  
+[中文版(十六，致谢和参考资料）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15-2/)  
 
-中文版(十六，致谢和参考资料）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15-2/  
+[中文版(十六，致谢和参考资料）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15-2/)  
 
-中文版(附录A：支持的RTP拓扑图）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a/  
-中文版(附录A1：点对点）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a1/  
+[中文版(附录A：支持的RTP拓扑图）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a/)  
+[中文版(附录A1：点对点）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a1/)  
 
-中文版(附录A2：单点多播）：http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a2/  
+[中文版(附录A2：单点多播）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a2/)  
