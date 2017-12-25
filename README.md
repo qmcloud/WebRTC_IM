@@ -4,7 +4,7 @@ WebIM视屏聊天系统采用PHP+Swoole + redis + Mysql + comet + Webrtc等技�
 **在线体验地址**[  https://51zhibo.top](https://51zhibo.top/)     
 ***
 **如有疑问可以加QQ群：274904994**  
-![二维码](https://avatars3.githubusercontent.com/u/26708405?s=460&v=4)  
+![二维码](https://avatars3.githubusercontent.com/u/26708405?s=64&v=4) 
 ***
 IM 篇 聊天部分
 ========
