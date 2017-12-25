@@ -1,8 +1,8 @@
 #WebIM采用PHP+Swoole + redis + Mysql + comet + Webrtc等架构#
 ***
-**在线体验地址  **[https://51zhibo.top](https://51zhibo.top/)
+**在线体验地址**[  https://51zhibo.top](https://51zhibo.top/)
 ***
-IM 篇 
+IM 篇 聊天部分
 ========
 
 使用PHP+Swoole实现的网页即时聊天工具，
@@ -203,11 +203,10 @@ Socket服务器：此项目中浏览器的WebSocket客户端连接的服务器�
 WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支持此项目中有提供flash版本的实现。
   
 ***
-IM 篇 
+Webrtc 篇 音视频连麦部分 （重点），
 ========
-***
-   **一、官方网站**：[http://webrtc.org](http://webrtc.org（官网还是最权威的）)    
-    `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）  
+   *  ###一、官方网站：[ http://webrtc.org](http://webrtc.org)（官网还是最权威的）      
+    `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）    
     `2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
     **WebRTC官方源码样例（不含移动端）**：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
     **WebRTC在线演示效果**：[（可以清楚的看到每个接口是怎样被调用的）](http://webrtc.github.io/samples)  
