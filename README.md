@@ -1,5 +1,5 @@
   
-WebIM视屏聊天系统采用PHP+Swoole + redis + Mysql + comet + Webrtc等技术架构  
+*  ### WebIM视屏聊天系统采用PHP + Swoole + redis + Mysql + comet + WebRtc等技术架构  
 ***
 **在线体验地址**[  https://51zhibo.top](https://51zhibo.top/)     
 ***
@@ -117,11 +117,11 @@ $config['server'] = array(
     //监听的端口
     'port' => '9503',
     //WebSocket的URL地址，供浏览器使用的
-    'url' => 'ws://im.swoole.com:9503',
+    'url' => 'ws://im.xxx.com:9503',
     //用于Comet跨域，必须设置为web页面的URL
-    //比如你的网站静态页面放在 http://im.swoole.com:8888/main.html
-    //这里就是 http://im.swoole.com:8888
-    'origin' => 'http://im.swoole.com:8888',
+    //比如你的网站静态页面放在 http://im.xxx.com:8888/main.html
+    //这里就是 http://im.xxx.com:8888
+    'origin' => 'http://im.xxx.com:8888',
 );
 ```
 
@@ -132,7 +132,7 @@ $config['server'] = array(
 __5. 启动WebSocket服务器__
 
 ```shell
-php webim/webim_server.php start 
+php server.php start 
 ```
 
 IE浏览器不支持WebSocket，需要使用FlashWebSocket模拟，请修改flash_policy.php中对应的端口，然后启动flash_policy.php。
@@ -163,7 +163,7 @@ vi /etc/hosts
 
 ```
 + webim
-  |- webim_server.php //WebSocket协议服务器
+  |- server.php //WebSocket协议服务器
   |+ swoole.ini // WebSocket协议实现配置
   |+ configs //配置文件目录
   |+ webroot
@@ -211,10 +211,10 @@ WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支�
 ***
 WebRtc篇 音视频部分 （重点难点部分）
 ========
-*  ### 一、webrtc介绍（注意以下所有的资源必须翻墙,实在无办法翻墙的可以进群文件or私聊我）
-[官方网站](http://webrtc.org)（官网还是最权威的）      
-`2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）  
-`2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
+*  ### 一、webrtc介绍（注意以下所有的资源必须翻墙,实在无办法翻墙的可以进群文件or私聊我）  
+  [官方网站](http://webrtc.org)（官网还是最权威的）        
+  `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）   
+  `2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
  **WebRTC官方源码样例（不含移动端）**：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
  **WebRTC在线演示效果**：[http://webrtc.github.io/samples](http://webrtc.github.io/samples) （可以清楚的看到每个接口是怎样被调用的）   
 *  ### 二、初学者入门
@@ -374,7 +374,7 @@ IETF协议http://datatracker.ietf.org/wg/rtcweb/documents/
 
 [中文版(十六，致谢和参考资料）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15-2/)  
 
-[中文版(附录A：支持的RTP拓扑图）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a/)  
+[中文版(附录A：支持的RTP拓扑图）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtpappendix-a/)    
 [中文版(附录A1：点对点）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a1/)  
 
 [中文版(附录A2：单点多播）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a2/)  
