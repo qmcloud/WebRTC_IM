@@ -211,12 +211,12 @@ WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支�
 ***
 WebRtc篇 音视频部分 （重点难点部分）
 ========
-*  ### 一、webrtc介绍（注意以下所有的资源必须翻墙,实在无办法翻墙的可以进群文件，或者私聊我）
-`官方网站：[ http://webrtc.org](http://webrtc.org)（官网还是最权威的）`    
-    `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）    
-    `2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
-    **WebRTC官方源码样例（不含移动端）**：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
-    **WebRTC在线演示效果**：[（可以清楚的看到每个接口是怎样被调用的）](http://webrtc.github.io/samples)  
+*  ### 一、webrtc介绍（注意以下所有的资源必须翻墙,实在无办法翻墙的可以进群文件or私聊我）
+[官方网站](http://webrtc.org)（官网还是最权威的）      
+`2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）  
+`2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
+ **WebRTC官方源码样例（不含移动端）**：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
+ **WebRTC在线演示效果**：[http://webrtc.github.io/samples](http://webrtc.github.io/samples) （可以清楚的看到每个接口是怎样被调用的）   
 *  ### 二、初学者入门
 **官方推荐的入门文章**：http://html5rocks.com/en/tutorials/webrtc/basics（个人感觉讲的有点绕，英文不好估计很难理解）  
 **使用WebRTC搭建前端视频聊天室——入门篇**：[http://chinawebrtc.org/?p=271](http://chinawebrtc.org/?p=271)（推荐这篇中文的入门，讲的很细，它的三篇后续教程也很值得一看）  
