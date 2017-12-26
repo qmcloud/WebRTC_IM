@@ -209,9 +209,10 @@ Socket服务器：此项目中浏览器的WebSocket客户端连接的服务器�
 WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支持此项目中有提供flash版本的实现。
   
 ***
-WebRtc篇 音视频连麦部分 （重点难点部分）
+WebRtc篇 音视频部分 （重点难点部分）
 ========
-   *  ###一、官方网站：[ http://webrtc.org](http://webrtc.org)（官网还是最权威的）      
+   ##`（由于天朝的政策以下资源必须翻墙,实在无力找到的可以进群私聊我）`
+ *  ###一、官方网站：[ http://webrtc.org](http://webrtc.org)（官网还是最权威的）      
     `2013谷歌I/O大会对WebRTC的介绍`：[视频](https://www.youtube.com/watch?v=p2HzZkd2A40)，[ppt](http://io13webrtc.appspot.com/#1)（讲的不错）    
     `2012谷歌I/O大会对WebRTC的介绍`：[视频](http://youtu.be/E8C8ouiXHHk)(视频要翻墙)  
     **WebRTC官方源码样例（不含移动端）**：http://github.com/webrtc/samples （看再多理论不如抠一遍源码）  
