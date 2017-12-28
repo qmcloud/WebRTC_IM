@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>提交个人信息</title>
+<!-- For-Mobile-Apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Icon Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps -->
+<!-- Style --> 
+<link rel="stylesheet" href="./static/css/loginstyle.css" type="text/css" media="all" />
+<script src="./static/js/jquery.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>登录</h1>
+     <div class="contact-form">
+	 <div class="profile-pic">
+	 <img id="header" src="./static/img/head/1.png" alt="User Icon" width="100px" height="100px" />
+	 </div>	 
+	 <div class="signin">
+     <form>
+	      <input type="text" class="user" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}" />
+		  <!--<input type="password" class="pass" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" />
+		  <p><a href="#">Forgot Password?</a></p>-->		  
+     </form>
+	 </div>	 
+	      <input type="submit" id="sub" value="提交" />
+	 </div>
+</div>
+<div class="footer">
+     <p>Copyright &copy; 2017 . All Rights Reserved | Design by <a href="https://51zhibo.top/" target="_blank">51zhibo.top</a></p>
+</div>
+</body>
+<script>
+
+ var rand_head=Math.floor(Math.random()*287+1);
+if(rand_head<=0){
+  rand_head=Math.floor(Math.random()*287+1);
+}
+var head_str="./static/img/head/+__("+rand_head+").jpg"
+  $("#header").attr("src",head_str)
+
+
+$("#header").click(function(){ 
+    var rand_head=Math.floor(Math.random()*287+1);
+if(rand_head<=0){
+  rand_head=Math.floor(Math.random()*287+1);
+}
+var head_str="./static/img/head/+__("+rand_head+").jpg"
+  $("#header").attr("src",head_str)
+});
+
+$("#sub").click(function(){
+ var head=$("#header").attr("src");
+ var name=$(".user").val();
+if(name.length>4){alert("名字过长")}else{
+	window.localStorage.setItem("name", name);
+	window.localStorage.setItem("head", head);
+	window.location.href="index.html";
+}
+
+
+
+}) 
+
+</script>
+</html>
