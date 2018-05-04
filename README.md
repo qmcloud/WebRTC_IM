@@ -1,7 +1,7 @@
   
 *  ### WebIM视屏聊天系统采用PHP + Swoole + redis + Mysql + comet + WebRtc等技术架构  
 ***
-**在线体验地址**[  https://www.51zhibo.top](https://51zhibo.top/) ||已经支持手机端    
+**在线体验地址**[  https://www.51zhibo.top](https://www.51zhibo.top/) ||已经支持手机端    
 ***
 **如有疑问可以加QQ群：274904994**  
 ![二维码](https://avatars3.githubusercontent.com/u/26708405?s=64&v=4) 
