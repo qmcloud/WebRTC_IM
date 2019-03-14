@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+ 
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/chat.css" rel="stylesheet">
+    <link href="/static/css/webuploader.css" rel="stylesheet">
+    <link href="/static/css/tk.css" rel="stylesheet">
+    <link href="/static/css/facebox.css" rel="stylesheet">
+	<link href="/static/css/alert.css" rel="stylesheet">
+	
+    <script src="./static/js/webrtc.js"></script> 
+    <script src="./static/js/jquery.js"></script>
+    <script src="./static/js/jquery.json.js"></script>
+	<script src="./static/js/xcConfirm.js" type="text/javascript"></script>
+    <script src="./static/js/console.js"></script>
+    <script src="./static/js/config.js" charset="utf-8"></script>
+    <script src="./static/js/tc.all.js" type="text/javascript"></script>
+    <script src="./static/js/dacall.js"></script>
+    <script src="./static/js/comet.js" charset="utf-8"></script>
+    <script src="./static/js/chat.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./static/js/facebox.js"></script>
+    <script type="text/javascript" src="./static/js/ad.js"></script>
+    <script type="text/javascript">
+        $.facebox.settings.closeImage = './static//images/closelabel.png';
+        $.facebox.settings.loadingImage = './static/images/loading.gif';
+        $(document).ready(function($){
+            $('a[rel=facebox]').facebox();
+        });
+        
+	var user = "Dans";
+    var debug = true;
+    </script>
+    <link type="text/css" rel="stylesheet" href="./static/css/facebox.css"/> 
+    <style>
+        body {
+            padding-top: 60px;
+        }
+		.sgBtn{width: 135px; height: 35px; line-height: 35px; margin-left: 10px; margin-top: 10px; text-align: center; background-color: #0095D9; color: #FFFFFF; float: left; border-radius: 5px;}
+		
+    </style>
+  
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/">WebIM (Swoole+WebSocket+Comet+Webrtc视频连麦聊天室)</a>
+
+            <div class="nav-collapse">
+                <!--             <ul class="nav">
+      <li class="active"><a href="/">Lobby</a></li>
+    </ul> -->
+                <ul class="nav pull-right">
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container">
+    <div id="video"></div>
+        <div class="row">
+        
+            <!--主聊天区-->
+            <div id="chat-column" class="span8 well">
+
+                <!--
+                <div id="chat-tool" style="height:100px;border:0px solid #ccc;">
+                    个人资料区
+                </div>
+                -->
+
+                <!--消息显示区-->
+                <div id="chat-messages" style="border:0px solid #ccc;">
+                    <div class="message-container">
+                    </div>
+                </div>
+
+
+                <!--工具栏区-->
+                <div id="chat-tool" style="padding-left:10px;height:30px;border:0px solid #ccc;background-color:#F5F5F5;">
+                    <div style="float: left; width: 140px;">
+                        <select id="userlist" style="float: left; width: 90px;">
+                            <option value=0>所有人</option>
+                        </select>
+                        <!-- 聊天表情 -->
+                        <a onclick="toggleFace()" id="chat_face" class="chat_face">
+                            <img src="/static/img/face/15.gif"/>
+                        </a>
+                    </div>
+                    <div style="float: left; width: 80px;height: 25px;">
+                        <!--用来存放item-->
+    					<a href="javascript:;" class="file">选择图片
+						<input type="file" name="upimgs" id="upimg">
+						</a>
+    				
+                    </div>
+                    <div style="float: left; width: 50px;height: 25px;">
+                        <!--用来存放item-->
+    					<div id="fileList1" class="uploader-list1"></div>
+    					<div id="filePicker1"><img id="vido" height="25px" width="30px" src="./static/img/video.png" title="视屏通话"></div>	
+                    </div>
+                    <div style="float: left; width: 50px;height: 25px;">
+                        <!--用来存放item-->
+    					<div id="fileList1" class="uploader-list1"></div>
+    					<div id="filePicker1"><img id="mac" height="25px" width="30px" src="./static/img/mac.png" title="语音通话"></div>	
+                    </div>
+					  <div style="float: left; width: 50px;height: 25px;">
+                        <!--用来存放item-->
+    					<div id="fileList3" class="uploader-list1"></div>
+    					<div id="filePicker3"><img id="screen" height="25px" width="30px" src="./static/img/desk.png" title="远程桌面"></div>	
+                    </div>
+                    <div style="float: left; width: 50px;height: 25px;">
+                        <!--用来存放item-->
+    					<div id="fileList3" class="uploader-list1"></div>
+    					<div id="filePicker3"><img id="set" height="25px" width="30px" src="./static/img/set.png" title="设置"></div>	
+                    </div>
+                </div>
+                <!--工具栏结束-->
+
+                <!--聊天表情弹出层-->
+                <div id="show_face" class="show_face">
+                </div>
+                <!--聊天表情弹出层结束-->
+
+                <!--发送消息区-->
+                <div id="input-msg" style="height:110px;border:0px solid #ccc;">
+                    <form id="msgform" class="form-horizontal post-form">
+                        <div class="input-append">
+                            <textarea id="msg_content" style="width:480px; height:80px;" rows="3" cols="500" contentEditable="true"></textarea>
+                            <img style="width:80px;height:80;" onclick="sendMsg($('#msg_content').val(), 'text');" src="/static/img/send.png"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--主聊天区结束-->
+			
+
+            <!--左边栏-->
+			
+            <div id="left-column" class="span3">
+                <div class="well c-sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header"></li>
+                        <li class="active"><a href="javascript:void(0)">在线列表</a>
+                        </li>
+                    </ul>
+                    <ul id="left-userlist">
+                    </ul>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+			
+        </div>
+    
+    </div>
+    <!-- /container -->
+    <div id="msg-template" style="display: none">
+        <div class="message-container">
+            <div class="userpic"></div>
+            <div class="message">
+                <span class="user"></span>
+
+                <div class="cloud cloudText">
+                    <div style="" class="cloudPannel">
+                        <div class="sendStatus"></div>
+                        <div class="cloudBody">
+                            <div class="content"></div>
+                        </div>
+                        <div class="cloudArrow "></div>
+                    </div>
+                </div>
+            </div>
+            <div class="msg-time"></div>
+        </div>
+    </div>
+    <!-- / -->
+
+<div id="detail">
+<div class="tit"><i class="close">关闭</i></div>
+<pre id="push">
+<p id="otvideo"></p><p id="myvideo" style="width:266px;height:200px;float:right" for="myvd"></p> 
+<label for="audioSource">音频选择: </label><select style="display:inline;" id="audioSource"></select><label for="videoSource">视屏选择: </label><select style="display:inline;" id="videoSource"></select></br>Channel: <input style="width:50px" id="channel" type="text" value="" size="4"></input>
+<button style="float:left" id="leave" class="btn btn-primary">挂断</button> &nbsp <button  style="float:left" id="publish" class="btn btn-primary">继续</button> &nbsp <button style="float:left" id="unpublish" class="btn btn-primary" >暂停</button>	
+</pre>
+</div>
+</div>
+<!-- 弹框 -->
+</body>
+<script>
+window.onload = function(){ 
+	  
+	  var ikey = 0;
+	  var imouse = 0;
+	  var itime = 60 * 10;
+	  document.body.onmousemove = function(){
+	      imouse = 1;
+	  }
+	  document.body.onkeydown = function(){
+	      ikey = 1;
+	  }
+	  var ierval = window.setInterval(function(){
+	      if(imouse){
+	          imouse = 0;
+	            msg.cmd = 'message';
+	            msg.from = name;
+	            msg.channal = 11;
+	            msg.data = '';
+	            msg.type = 'sys';
+	            ws.send($.toJSON(msg));
+	      }
+	      if(ikey){
+	          ikey = 0;
+	          msg.cmd = 'message';
+	            msg.from = name;
+	            msg.channal = 11;
+	            msg.data = '';
+	            msg.type = 'sys';
+	            ws.send($.toJSON(msg));
+	      }
+	      itime -= 1;    
+	      if(itime <= 0){
+	         window.clearInterval(ierval);
+	      }
+	  },30000);
+	    
+	  // 选择图片 
+	 
+		
+    document.getElementById('upimg').onchange = function(){  
+  
+        var img = event.target.files[0];  
+  
+        // 判断是否图片  
+        if(!img){  
+            return ;  
+        }  
+  
+        // 判断图片格式  
+        if(!(img.type.indexOf('image')==0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name)) ){  
+            window.wxc.xcConfirm('图片只能是jpg,png', window.wxc.xcConfirm.typeEnum.info);  
+            return ;  
+        }  
+  
+        var reader = new FileReader();  
+        reader.readAsDataURL(img);  
+  
+        reader.onload = function(e){ // reader onload start  
+            // ajax 上传图片  
+            $.post("upload.php", { img: e.target.result},function(ret){  
+                if(ret.img!=''){  
+          
+				  msg={}
+				  //$('#showimg').html('<img src="' + ret.img + '">');
+				  content = '<br /><a href="' + ret.img + '" target="_blank"><img src="' + ret.img + '" /></a>';
+				  //html += '<span style="color: orange"><a href="javascript:selectUser('+ fromId + ')">' + userlist[fromId] + said;
+				  //html += '</a></span> '
+				  $("#msg-template .content").html(content);
+				  $("#chat-messages").append($("#msg-template").html());
+				  $('#chat-messages')[0].scrollTop = 1000000;
+				  msg.cmd = 'message';
+				  msg.from = client_id;
+				  msg.user={"name":name};
+				  msg.channal = 0;
+				  msg.data = '';
+				  msg.type = 'image';
+				  msg.url = ret.img;
+				  ws.send($.toJSON(msg)); 
+                }else{  
+                    window.wxc.xcConfirm('上传失败', window.wxc.xcConfirm.typeEnum.info);  
+                }  
+            },'json');  
+        } // reader onload end  
+    }  
+	//视屏
+
+	
+$("#vido").click(function(){
+	//window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info);($("#pushtxt").html());
+	if(name==""||name==null){
+		window.location.href="login.html";
+	}
+	if(channal=="" || channal==null){
+		window.wxc.xcConfirm("channal 不存在，在设置中添加", window.wxc.xcConfirm.typeEnum.info);
+	}
+	if($("#userlist").val()==0){window.wxc.xcConfirm("不能和所有人一起连麦",window.wxc.xcConfirm.typeEnum.info);return false;}
+	msg={};
+	msg.cmd = 'message';
+    msg.from = client_id;
+    msg.to = $('#userlist').val();
+    msg.channal = 1;
+    msg.data = "ask";
+    msg.room = channal;
+    msg.type = "video";
+    ws.send($.toJSON(msg));
+	if(!AgoraRTC.checkSystemRequirements()) {
+		if(navigator.userAgent.indexOf("360SE")>0){}else{
+			window.wxc.xcConfirm("您的浏览器不支持音视屏通话，请下载最新的谷歌 或者 火狐 或者 Opera 或者 360浏览器亲无视报警直接大胆的用<br/>注意手机ios 11 用Safari ,Android用 谷歌APP版或者火狐APP版的浏览器 微信和QQ有些机型可以，有些不行。", window.wxc.xcConfirm.typeEnum.info);
+		}
+	}
+
+	popWin("detail");
+
+	AgoraRTC.Logger.error('this is error');
+	AgoraRTC.Logger.warning('this is warning');
+	AgoraRTC.Logger.info('this is info');
+	AgoraRTC.Logger.debug('this is debug');
+	var audioSelect = window.localStorage.getItem("audio");
+	var videoSelect = window.localStorage.getItem("video");
+	if(audioSelect=="" || audioSelect==null || videoSelect=="" || videoSelect==null){
+		alert("请在设置中至少选择一个音频设备！");return false;
+	}else{
+		join("video");
+		document.getElementById("vido").disabled = false;
+		document.getElementById("mac").disabled = false;
+		document.getElementById("screen").disabled = false;
+	}
+
+	
+	
+});
+
+$("#mac").click(function(){
+	if(name==""||name==null){
+		window.location.href="login.html";
+	}
+	if($("#userlist").val()==0){window.wxc.xcConfirm("不能和所有人一起连麦",window.wxc.xcConfirm.typeEnum.info);return false;}
+	msg={};
+	msg.cmd = 'message';
+    msg.from = client_id;
+    msg.to = $('#userlist').val();
+    msg.channal = 1;
+    msg.data = "ask";
+    msg.room = channal;
+    msg.type = "audio";
+    ws.send($.toJSON(msg));
+	if(!AgoraRTC.checkSystemRequirements()) {
+		if(navigator.userAgent.indexOf("360SE")>0){}else{
+			window.wxc.xcConfirm("您的浏览器不支持音视屏通话，请下载最新的谷歌 或者 火狐 或者 Opera 或者 360浏览器亲无视报警直接大胆的用<br/>注意手机ios 11 用Safari ,Android用 谷歌APP版或者火狐APP版的浏览器 微信和QQ有些机型可以，有些不行。", window.wxc.xcConfirm.typeEnum.info);
+		}
+	}
+
+	popWin("detail");	
+	var audioSelect = window.localStorage.getItem("audio");
+	var videoSelect = window.localStorage.getItem("video");
+	if(audioSelect=="" || audioSelect==null || videoSelect=="" || videoSelect==null){
+		alert("请在设置中至少选择一个音频设备！");return false;
+	}else{
+		join("audio");
+		document.getElementById("vido").disabled = false;
+		document.getElementById("mac").disabled = false;
+		document.getElementById("screen").disabled = false;
+	}
+});
+
+
+$("#screen").click(function(){
+	if(name==""||name==null){
+		window.location.href="login.html";
+	}
+	if($("#userlist").val()==0){window.wxc.xcConfirm("不能和所有人一起连麦",window.wxc.xcConfirm.typeEnum.info);return false;}
+	msg={};
+	msg.cmd = 'message';
+    msg.from = client_id;
+    msg.to = $('#userlist').val();
+    msg.channal = 1;
+    msg.data = "ask";
+    msg.room = channal;
+    msg.type = "screen";
+    ws.send($.toJSON(msg));
+    
+    window.wxc.xcConfirm("温馨提示！亲请在火狐或者Opera或者360浏览器打开此功能 谷歌必须安装 Chrome extension (百度一下其实也不难)", window.wxc.xcConfirm.typeEnum.info);
+	if(!AgoraRTC.checkSystemRequirements()) {
+		if(navigator.userAgent.indexOf("360SE")>0){}else{
+			window.wxc.xcConfirm("您的浏览器不支持音视屏通话，请下载最新的谷歌 或者 火狐 或者 Opera 或者 360浏览器亲无视报警直接大胆的用<br/>注意手机ios 11 用Safari ,Android用 谷歌APP版或者火狐APP版的浏览器 微信和QQ有些机型可以，有些不行。", window.wxc.xcConfirm.typeEnum.info);
+		}
+		
+	}
+
+	popWin("detail");	
+	join("screen");
+	document.getElementById("vido").disabled = false;
+    document.getElementById("mac").disabled = false;
+    document.getElementById("screen").disabled = false;
+});
+
+$("#set").click(function(){
+	//$("#pushtxt").html("");
+	
+	if(!AgoraRTC.checkSystemRequirements()) {
+		if(navigator.userAgent.indexOf("360SE")>0){}else{
+			window.wxc.xcConfirm("您的浏览器不支持音视屏通话，请下载最新的谷歌 或者 火狐 或者 Opera 或者 360浏览器亲无视报警直接大胆的用<br/>注意手机ios 11 用Safari ,Android用 谷歌APP版或者火狐APP版的浏览器 微信和QQ有些机型可以，有些不行。", window.wxc.xcConfirm.typeEnum.info);
+		}	
+	}
+	//var string='<div><div style="float:letf" class="select"><label for="audioSource">音频选择: </label><select id="audioSource"></select></div><div style="float:letf" class="select"><label for="videoSource">视屏选择: </label><select id="videoSource"></select></div><div style="float:letf" class="select"><label for="audioSource">密钥: </label><input id="key" type="text" value="6cfc05b5691043c0af64cececdbd6b24" size="36"></input><label for="audioSource">Channel: </label><input id="channel" type="text" value="1000" size="4"></input></div></div>';
+	//$("#push").html(string);
+		popWin("detail");
+	
+		/* select Log type */
+		// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.NONE);
+		// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.ERROR);
+		// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.WARNING);
+		// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);  
+		// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.DEBUG);
+
+		/* simulated data to proof setLogLevel() */
+		AgoraRTC.Logger.error('this is error');
+		AgoraRTC.Logger.warning('this is warning');
+		AgoraRTC.Logger.info('this is info');
+		AgoraRTC.Logger.debug('this is debug');
+		getDevices();
+	    //join();
+});
+
+$("#leave").click(function(){
+	//guanbi 
+	leave();
+	
+})
+
+$("#publish").click(function(){
+	//guanbi 
+	publish();
+	
+})
+
+$("#unpublish").click(function(){
+	//guanbi 
+	unpublish();
+	
+})
+$(".close").click(function(){
+	//guanbi 
+	
+  //leave();
+  
+	window.location.reload() 
+	
+})
+	if(!AgoraRTC.checkSystemRequirements()) {
+		if(navigator.userAgent.indexOf("360SE")>0){}else{
+			window.wxc.xcConfirm("您的浏览器不支持音视屏通话，请下载最新的谷歌 或者 火狐 或者 Opera 或者 360浏览器亲无视报警直接大胆的用<br/>注意手机ios 11 用Safari ,Android用 谷歌APP版或者火狐APP版的浏览器 微信和QQ有些机型可以，有些不行。", window.wxc.xcConfirm.typeEnum.info);
+		}
+	}
+	getDevices()
+	var channal=window.localStorage.getItem("channel");
+	$("#channel").val(channal)	
+	document.getElementById("vido").disabled = true;
+ 	document.getElementById("mac").disabled = true;
+    document.getElementById("screen").disabled = true;
+    document.getElementById("video").disabled = true;
+	var ad1=new AdMove("ad1"); 
+	ad1.Run();
+	
+	
+}
+</script>
+<DIV id=ad1 style="Z-INDEX: 5"> 
+<!--漂浮开始--> 
+<A href="https://51zhibo.top" 
+target=_blank><IMG src="./static/img/qq.png"></A> 
+<!--漂浮结束--> 
+</DIV> 
+</html>

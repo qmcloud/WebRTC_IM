@@ -1,0 +1,610 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+/*-- Fonts --*/
+@font-face {
+	font-family: 'ClementePDac-ExtraLight';
+	src:url(../fonts/ClementePDac-ExtraLight.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'ClementePDai-Regular';
+	src:url(../fonts/ClementePDai-Regular.ttf) format('truetype');
+}
+/*-- Fonts --*/
+
+/*-- Index-Page-Styling --*/
+
+body {
+    background: url("../img/head/bg.png") repeat;
+	font-family: ClementePDac-ExtraLight;
+}
+
+.contact-form {
+    margin: 0 auto;
+    width: 35%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.profile-pic {
+    position: absolute;
+    top: -20%;
+    left: 33.5%;
+}
+
+h1 {
+    text-align: center;
+    color: #C64444;
+    margin-top: 70px;
+    font-family: ClementePDai-Regular;
+}
+
+.signin {
+    margin-top: 125px;
+    padding: 80px 0 20px 0;
+    background-color: #3B8590;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input.user {
+    width: 80%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    font-family: ClementePDac-ExtraLight;
+    outline: none;
+}
+input.pass {
+    width: 80%;
+    background: none;
+    border: none;
+    border-top: 1px solid white;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    font-family: ClementePDac-ExtraLight;
+    outline: none;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	font-family: ClementePDac-ExtraLight;
+    font-weight: bold;
+	text-align: left;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    background: #C64444;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-family: ClementePDai-Regular;
+	cursor: pointer;
+	outline: none;
+}
+input[type="submit"]:hover {
+    background: #099E84;
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+}
+.footer p {
+	font-family: ClementePDac-ExtraLight;
+	color: #3B8590;
+}
+.footer a {
+	font-family: ClementePDac-ExtraLight;
+	color: #3B8590;
+	text-decoration: none;
+}
+.footer a:hover {
+	color: #C64444;
+	text-decoration: underline;
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+/*-- Index-Page-Styling --*/
+
+/*-- Responsive Code --*/
+
+@media screen and (max-width: 1920px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 100px;   
+    }
+    .contact-form {
+        width: 30%;
+    }
+    .signin {
+        padding: 80px 0 30px 0;
+    }
+    .profile-pic {
+        top: -20%;
+        left: 37%;
+    }
+    input.user {
+        font-size: 20px;
+    }
+    input.pass {
+        font-size: 20px;
+    }
+    .footer {
+        margin-top: 150px;
+    }
+    .footer p {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 1680px) {
+    .profile-pic {
+        top: -20%;
+        left: 35%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+    .profile-pic {
+        top: -20%;
+        left: 33%;
+    }
+    .footer {
+        margin-top: 100px;
+    }
+    .footer p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+    .contact-form {
+        width: 35%;
+    }
+    .profile-pic {
+        top: -20%;
+        left: 33%;
+    }
+    .footer {
+        margin-top: 100px;
+    }
+    .footer p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .profile-pic {
+        top: -20%;
+        left: 33%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+    .contact-form {
+        width: 40%;
+    }
+    .profile-pic {
+        top: -20%;
+        left: 34.5%;
+    }
+    .footer {
+        margin-top: 80px;
+    }
+    .footer p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    h1 {
+        font-size: 40px;
+        margin-top: 50px;
+    }
+    .profile-pic {
+        top: -20%;
+        left: 32%;
+    }
+    .footer {
+        margin-top: 80px;
+    }
+    .footer p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        margin-top: 100px;
+    }
+    .contact-form {
+        width: 45%;
+    }
+    .signin {
+        margin-top: 100px;
+    }
+    .profile-pic {
+        top: -20%;
+        left: 33%;
+    }
+    .footer {
+        margin-top: 70px;
+    }
+    .footer p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 966px) {
+    .profile-pic {
+        top: -20%;
+        left: 32.5%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .profile-pic {
+        top: -20%;
+        left: 31.5%;
+    }
+}
+
+@media screen and (max-width: 853px) {
+    .profile-pic {
+        top: -20%;
+        left: 29.5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .profile-pic {
+        top: -20%;
+        left: 28%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        margin-top: 60px;
+    }
+    .contact-form {
+        width: 50%;
+    }
+    .signin {
+        margin-top: 100px;
+    }
+    .profile-pic {
+        top: -22%;
+        left: 29.5%;
+    }
+    .footer {
+        margin-top: 125px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .contact-form {
+        width: 65%;
+    }
+    h1 {
+        margin-top: 45px;
+    }
+    .signin {
+        margin-top: 100px;
+        padding: 60px 0 10px 0;
+    }
+    .profile-pic {
+        top: -23%;
+        left: 37%;
+    }
+    img {
+        width: 130px;
+    }
+    input.user {
+        padding: 15px;   
+    }
+    input.pass {
+        padding: 15px;   
+    }
+    input[type="submit"] {
+        padding: 15px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .contact-form {
+        width: 70%;
+    }
+    h1 {
+        margin-top: 45px;
+    }
+    .signin {
+        margin-top: 100px;
+        padding: 60px 0 10px 0;
+    }
+    .profile-pic {
+        top: -21%;
+        left: 36.5%;
+    }
+    img {
+        width: 130px;
+    }
+    input.user {
+        padding: 15px;   
+    }
+    input.pass {
+        padding: 15px;   
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 603px) {
+    .profile-pic {
+        top: -21%;
+        left: 34.5%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .signin {
+        margin-top: 100px;
+    }
+    .profile-pic {
+        top: -21%;
+        left: 34.5%;
+    }
+    img {
+        width: 130px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .footer p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .contact-form {
+        width: 80%;
+    }
+    h1 {
+        margin-top: 45px;
+    }
+    .signin {
+        margin-top: 100px;
+    }
+    .profile-pic {
+        top: -24%;
+        left: 34.5%;
+    }
+    img {
+        width: 140px;
+    }
+    input.user {
+        padding: 15px;   
+    }
+    input.pass {
+        padding: 15px;   
+    }
+    input[type="submit"] {
+        padding: 15px;
+    }
+    .footer {
+        margin: 50px 30px 0 30px;
+    }
+}
+
+@media screen and (max-width: 533px) {
+    .profile-pic {
+        top: -24%;
+        left: 33.5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 35px;
+    }
+    .profile-pic {
+        top: -24%;
+        left: 31.5%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .contact-form {
+        width: 95%;
+    }
+    h1 {
+        margin-top: 45px;
+    }
+    .signin {
+        margin-top: 100px;
+    }
+    .profile-pic {
+        left: 31.5%;
+    }
+    input.user {
+        padding: 15px;   
+    }
+    input.pass {
+        padding: 15px;   
+    }
+    .footer {
+        margin: 50px 10px 0 10px;
+    }
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 384px) {
+    h1 {
+        margin-top: 45px;
+        font-size: 30px;
+    }
+    .profile-pic {
+        top: -26%;
+        left: 31%;
+    }
+    img {
+        width: 135px;
+    }
+    .signin {
+        margin-top: 100px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 28px;
+        margin-top: 45px;
+    }
+    .contact-form {
+        width: 100%;
+    }
+    .signin {
+        margin-top: 100px;
+    }
+    .profile-pic {
+        left: 31%;
+    }
+    input.user {
+        padding: 15px;   
+    }
+    input.pass {
+        padding: 15px;   
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 24px;
+        margin-top: 45px;
+    }
+    .contact-form {
+        width: 100%;
+    }
+    .signin {
+        margin-top: 100px;
+        padding: 50px 0 5px 0;
+    }
+    .profile-pic {
+        top: -22%;
+        left: 31%;
+    }
+    img {
+        width: 110px;
+    }
+    input.user {
+        padding: 15px;   
+    }
+    input.pass {
+        padding: 15px;   
+    }
+    input[type="submit"] {
+        padding: 12px;
+    }
+    .footer {
+        margin-top: 50px;
+    }
+    .footer p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 240px) {
+    h1 {
+        font-size: 18px;
+        margin-top: 45px;
+    }
+    .signin {
+        margin-top: 70px;
+        padding: 50px 0 5px 0;
+    }
+    .profile-pic {
+        top: -18%;
+        left: 26%;
+    }
+    img {
+        width: 100px;
+    }
+    input.user {
+        padding: 12px;
+        font-size: 15px;
+    }
+    input.pass {
+        padding: 12px;
+        font-size: 15px;
+    }
+    input[type="submit"] {
+        padding: 8px;
+    }
+    .footer {
+        margin-top: 30px;
+    }
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+/*-- Responsive Code --*/
