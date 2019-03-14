@@ -104,6 +104,29 @@ $ nohup $GOPATH/bin/job -c $GOPATH/bin/job.conf 2>&1 > /data/logs/goim/panic-job
 如果启动失败，默认配置可通过查看panic-xxx.log日志文件来排查各个模块问题.
 
 ### 六、测试
+## Benchmark
+![benchmark](./docs/benchmark.jpg)
+
+### Benchmark Server
+| CPU | Memory | OS | Instance |
+| :---- | :---- | :---- | :---- |
+| Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz  | DDR3 32GB | Debian GNU/Linux 8 | 1 |
+
+### Benchmark Case
+* Online: 1,000,000
+* Duration: 15min
+* Push Speed: 40/s (broadcast room)
+* Push Message: {"test":1}
+* Received calc mode: 1s per times, total 30 times
+
+### Benchmark Resource
+* CPU: 2000%~2300%
+* Memory: 14GB
+* GC Pause: 504ms
+* Network: Incoming(450MBit/s), Outgoing(4.39GBit/s)
+
+### Benchmark Result
+* Received: 35,900,000/s
 
 推送协议可查看[push http协议文档](./docs/push.md)
 
@@ -144,8 +167,8 @@ router 属于有状态节点，logic可以使用一致性hash配置节点，增�
 
 job 根据kafka的partition来扩展多job工作方式，具体可以参考下kafka的partition负载
 
-==========================================
-##使用PHP+Swoole实现的网页即时聊天工具，
+============
+### 使用PHP+Swoole实现的网页即时聊天工具，
 
 * 全异步非阻塞Server，可以同时支持数百万TCP连接在线
 * 基于websocket+flash_websocket支持所有浏览器/客户端/移动端
@@ -157,7 +180,8 @@ job 根据kafka的partition来扩展多job工作方式，具体可以参考下ka
 * 支持Web端直接管理所有在线用户和群组
 >`后续待开发功能有：视屏留言，远程演示，远程桌面,视屏群聊等`
 > 最新的版本已经可以原生支持IE系列浏览器了，基于Http长连接
-============================================
+
+===========
 安装
 ----
 swoole扩展
