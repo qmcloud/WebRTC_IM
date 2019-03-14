@@ -5,4 +5,3 @@
 PushClient cb = new PushClient(InetAddress.getByName("10.160.61.129"), 8080 , 1, "game");
 中的game各个字母的asics生成roomId
 
-具体goim的修改内容，联系 微信：Alandy59
