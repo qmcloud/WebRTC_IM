@@ -4,7 +4,7 @@
 **在线体验地址**[  https://www.51zhibo.top](https://www.51zhibo.top/) ||已经支持手机端    
 ***
 **如有疑问可以扫码加技术群：274904994 QQ:779763764**  
-![二维码](https://avatars3.githubusercontent.com/u/26708405?s=64&v=4) 
+![二维码](https://github.com/DOUBLE-Baller/momo/blob/master/11111.png?raw=true) 
 ***
 演示效果: ![演示效果](http://group.store.qq.com/qun/M5CXvbshIHEJdIzwzpGpEg!!/V3tordiEP8SQVrQ8KAM/800?w5=1319&h5=640&rf=viewer_421)
 ***
