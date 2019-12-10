@@ -6,7 +6,7 @@
 **如有疑问可以扫码加技术群：274904994 QQ:779763764**  
 ![二维码](https://github.com/DOUBLE-Baller/momo/blob/master/11111.png?s=96&v=4raw=true) 
 ***
-演示效果: ![演示效果](http://group.store.qq.com/qun/M5CXvbshIHEJdIzwzpGpEg!!/V3tordiEP8SQVrQ8KAM/800?w5=1319&h5=640&rf=viewer_421)
+演示效果: ![演示效果](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/1111122.png?raw=true)
 ***
 IM 篇 聊天部分
 ========
