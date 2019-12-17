@@ -3,7 +3,7 @@
 ***
 **在线体验地址**[  https://www.51zhibo.top](https://www.51zhibo.top/) ||已经支持手机端    
 ***
-**如有疑问可以扫码加技术群：274904994 QQ:779763764**  
+**如有疑问可以扫码加技术群：微信:BCFind5**  
 ![二维码](https://github.com/DOUBLE-Baller/momo/blob/master/11111.png?s=96&v=4raw=true) 
 ***
 演示效果: ![演示效果](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/1111122.png?raw=true)
