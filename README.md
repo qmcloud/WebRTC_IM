@@ -311,7 +311,7 @@ vi /etc/hosts
 127.0.0.1 51zhibo.top
 ```
 
-用浏览器打开：https://51zhibo.top/
+用浏览器打开：https://XXX.com
 
 快速了解项目架构
 ----
