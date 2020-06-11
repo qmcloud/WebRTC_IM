@@ -2,7 +2,7 @@
 *  ### WebIM视屏聊天系统采用PHP + Swoole + Redis + Mysql + Comet + WebRtc + Golang等技术架构  
 *** 
 ***
-**如有疑问可以扫码加技术群：微信:**  
+**如有疑问可以扫码加技术群：QQ:407193275**  
 ![二维码](https://github.com/DOUBLE-Baller/momo/blob/master/11111.png?s=96&v=4raw=true) 
 ***
 演示效果: ![演示效果](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/1111122.png?raw=true)
@@ -308,7 +308,7 @@ vi /etc/hosts
 增加
 
 ```shell
-127.0.0.1 51zhibo.top
+127.0.0.1 
 ```
 
 用浏览器打开：https://XXX.com
