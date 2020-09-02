@@ -3,7 +3,7 @@
 *** 
 ***
 **如有疑问可以扫码加技术群：QQ:407193275**  
-![二维码](https://github.com/DOUBLE-Baller/momo/blob/master/11111.png?s=96&v=4raw=true) 
+![技术群](https://img-blog.csdnimg.cn/20200623093238797.png)
 ***
 演示效果: ![演示效果](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/1111122.png?raw=true)
 ***
