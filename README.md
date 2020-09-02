@@ -2,7 +2,7 @@
 *  ### WebIM视屏聊天系统采用PHP + Swoole + Redis + Mysql + Comet + WebRtc + Golang等技术架构  
 *** 
 ***
-**如有疑问可以扫码加技术群**  
+**技术群**  
 ![技术群](https://img-blog.csdnimg.cn/20200623093238797.png)
 
 ***
