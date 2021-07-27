@@ -1,12 +1,10 @@
   
 *  ### WebIM视屏聊天系统采用PHP + Swoole + Redis + Mysql + Comet + WebRtc + Golang等技术架构  
 *** 
+在线演示地址 ：![在线演示地址](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/qcode.png?raw=true) 
 ***
-**技术群**  
-![技术群](https://img-blog.csdnimg.cn/20200623093238797.png)
 
-***
-演示效果: ![演示效果](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/1111122.png?raw=true)
+微信：BCFind5
 ***
 IM 篇 聊天部分
 ========
