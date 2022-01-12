@@ -3,7 +3,7 @@
 *** 
 在线演示地址 ：![在线演示地址](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/web.png) app下载 ：![app下载](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/web/static/img/app.png) https://wwa.lanzoui.com/i4P0Ot1mnza
 ***
-![演示地址](https://lark-assets-prod-aliyun.oss-cn-hangzhou.aliyuncs.com/yuque/0/2022/jpeg/22838525/1641799594764-resources/24442807/jpg/acd4f351-88ba-413d-8f59-58362187fdc9.jpeg?OSSAccessKeyId=LTAI4GGhPJmQ4HWCmhDAn4F5&Expires=1641805563&Signature=mNTUdOB%2BoruLmTYxLP5qrFHXWRw%3D)
+![演示地址](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/IM.gif?raw=true)
 微信：BCFind5
 ***
 IM 篇 聊天部分
