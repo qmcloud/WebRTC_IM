@@ -528,7 +528,8 @@ IETF协议http://datatracker.ietf.org/wg/rtcweb/documents/
 
 [中文版(十六，致谢和参考资料）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-15-2/)    
 
-[中文版(附录A：支持的RTP拓扑图）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtpappendix-a/)    
-[中文版(附录A1：点对点）：]（http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a1/)  
+[中文版(附录A：支持的RTP拓扑图）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtpappendix-a/) 
+
+[中文版(附录A1：点对点）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a1/)  
 
 [中文版(附录A2：单点多播）：](http://www.iwebrtc.com/blog/web-real-time-communication-webrtc-media-transport-and-use-of-rtp-appendix-a2/)  
