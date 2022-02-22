@@ -122,8 +122,7 @@ $ nohup $GOPATH/bin/job -c $GOPATH/bin/job.conf 2>&1 > /data/logs/goim/panic-job
 如果启动失败，默认配置可通过查看panic-xxx.log日志文件来排查各个模块问题.
 
 ### 六、测试
-## Arch
-![benchmark](https://lark-assets-prod-aliyun.oss-cn-hangzhou.aliyuncs.com/yuque/0/2022/png/22838525/1641866980711-resources/24442807/png/b8889730-6b27-4112-9924-a06c0fdedb4b.png?OSSAccessKeyId=LTAI4GGhPJmQ4HWCmhDAn4F5&Expires=1645496778&Signature=tlLd3wRFAPLYyKLgj%2FLBGPF8YIk%3D)
+
 
 ### Benchmark Server
 | CPU | Memory | OS | Instance |
@@ -187,7 +186,7 @@ router 属于有状态节点，logic可以使用一致性hash配置节点，增�
 
 job 根据kafka的partition来扩展多job工作方式，具体可以参考下kafka的partition负载
 
-# PHP架构方案：PHP架构方案：
+# PHP架构方案:
 
 ### 使用PHP+Swoole实现的网页即时聊天工具，
 
