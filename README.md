@@ -1,11 +1,11 @@
-*  ### IM视屏聊天系统采用PHP+ golang + Swoole + Redis + Mysql + Comet + WebRtc
+*  ### IM音视频聊天系统采用 golang + WebRTC 
 *** 
 ## 演示：
 - Android下载：https://wwa.lanzouy.com/ii7TS00fxfva
 
 - IOS下载：https://wwa.lanzouy.com/iG8cL00fxm7i
 
-- H5：https://im.52webrtc.top/
+- H5：https://im.52webrtc.top
 
 ***
 ![演示地址](https://github.com/DOUBLE-Baller/WebRTC_IM/blob/master/IM.gif?raw=true)
@@ -14,31 +14,25 @@
 ![](https://img-blog.csdnimg.cn/20200623093238797.png)
 
 ----------------
+如有兴趣可商业合作 （UI设计，定制开发，系统重构，代理推广等）
+
 微信：BCFind5 【请备注好信息】
 
 文档地址：https://www.52webrtc.top
 
 博客地址：https://blog.csdn.net/u012115197/article/details/106916635
 
-Gitee：https://gitee.com/baoyalive/baoyalive.git
+---------------------------------------
 
-###### 商业合作 （UI设计，定制开发，系统重构，代理推广等）
-----------------
-
-
-基于B站开源GoIM架构方案：
-========
+## 基于B站开源GoIM架构方案：
 `GoIM` 一个支持集群的im及实时推送服务。
----------------------------------------
-  * [特性](#特性)
-  * [安装](#安装)
-  * [配置](#配置)
-  * [例子](#例子)
-  * [文档](#文档)
-  * [集群](#集群)
-  * [更多](#更多)
-
----------------------------------------
+## 核心功能
+* 1.支持tcp，websocket接入，消息互通
+* 2.离线消息同步
+* 3.单用户多设备同时在线
+* 4.单聊，群聊，以及超大群组 >2W人
+* 5.服务水平扩展
+* 6.使用热插拔驱动设计
 
 ## 特性
  * 轻量级
@@ -52,102 +46,6 @@ Gitee：https://gitee.com/baoyalive/baoyalive.git
  * 可拓扑的架构（job、logic模块可动态无限扩展）
  * 基于Kafka做异步消息推送
 
-## 安装
-### 一、安装依赖
-```sh
-$ yum -y install java-1.7.0-openjdk
-```
-
-### 二、安装Kafka消息队列服务
-
-kafka在官网已经描述的非常详细，在这里就不过多说明，安装、启动请查看[这里](http://kafka.apache.org/documentation.html#quickstart).
-
-### 三、搭建golang环境
-1.下载源码(根据自己的系统下载对应的[安装包](http://golang.org/dl/))
-```sh
-$ cd /data/programfiles
-$ wget -c --no-check-certificate https://storage.googleapis.com/golang/go1.5.2.linux-amd64.tar.gz
-$ tar -xvf go1.5.2.linux-amd64.tar.gz -C /usr/local
-```
-2.配置GO环境变量
-(这里我加在/etc/profile.d/golang.sh)
-```sh
-$ vi /etc/profile.d/golang.sh
-# 将以下环境变量添加到profile最后面
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=/data/apps/go
-$ source /etc/profile
-```
-
-### 四、部署goim
-1.下载goim及依赖包
-```sh
-$ yum install hg
-$ go get -u github.com/Terry-Mao/goim
-$ mv $GOPATH/src/github.com/Terry-Mao/goim $GOPATH/src/goim
-$ cd $GOPATH/src/goim
-$ go get ./...
-```
-
-2.安装router、logic、comet、job模块(配置文件请依据实际机器环境配置)
-```sh
-$ cd $GOPATH/src/goim/router
-$ go install
-$ cp router-example.conf $GOPATH/bin/router.conf
-$ cp router-log.xml $GOPATH/bin/
-$ cd ../logic/
-$ go install
-$ cp logic-example.conf $GOPATH/bin/logic.conf
-$ cp logic-log.xml $GOPATH/bin/
-$ cd ../comet/
-$ go install
-$ cp comet-example.conf $GOPATH/bin/comet.conf
-$ cp comet-log.xml $GOPATH/bin/
-$ cd ../logic/job/
-$ go install
-$ cp job-example.conf $GOPATH/bin/job.conf
-$ cp job-log.xml $GOPATH/bin/
-```
-到此所有的环境都搭建完成！
-
-### 五、启动goim
-```sh
-$ cd /$GOPATH/bin
-$ nohup $GOPATH/bin/router -c $GOPATH/bin/router.conf 2>&1 > /data/logs/goim/panic-router.log &
-$ nohup $GOPATH/bin/logic -c $GOPATH/bin/logic.conf 2>&1 > /data/logs/goim/panic-logic.log &
-$ nohup $GOPATH/bin/comet -c $GOPATH/bin/comet.conf 2>&1 > /data/logs/goim/panic-comet.log &
-$ nohup $GOPATH/bin/job -c $GOPATH/bin/job.conf 2>&1 > /data/logs/goim/panic-job.log &
-```
-如果启动失败，默认配置可通过查看panic-xxx.log日志文件来排查各个模块问题.
-
-### 六、测试
-
-
-### Benchmark Server
-| CPU | Memory | OS | Instance |
-| :---- | :---- | :---- | :---- |
-| Intel(R) Xeon(R) CPU E5-2630 v2 @ 2.60GHz  | DDR3 32GB | Debian GNU/Linux 8 | 1 |
-
-### Benchmark Case
-* Online: 1,000,000
-* Duration: 15min
-* Push Speed: 40/s (broadcast room)
-* Push Message: {"test":1}
-* Received calc mode: 1s per times, total 30 times
-
-### Benchmark Resource
-* CPU: 2000%~2300%
-* Memory: 14GB
-* GC Pause: 504ms
-* Network: Incoming(450MBit/s), Outgoing(4.39GBit/s)
-
-### Benchmark Result
-* Received: 35,900,000/s
-
-推送协议可查看[push http协议文档](./docs/push.md)
-
-## 配置
 
 TODO
 
@@ -186,205 +84,7 @@ router 属于有状态节点，logic可以使用一致性hash配置节点，增�
 
 job 根据kafka的partition来扩展多job工作方式，具体可以参考下kafka的partition负载
 
-# PHP架构方案:
 
-### 使用PHP+Swoole实现的网页即时聊天工具，
-
-* 全异步非阻塞Server，可以同时支持数百万TCP连接在线
-* 基于websocket+flash_websocket支持所有浏览器/客户端/移动端
-* 支持单聊/群聊/组聊等功能
-* 支持永久保存聊天记录，使用MySQL存储
-* 基于Server PUSH的即时内容更新，登录/登出/状态变更/消息等会内容即时更新
-* 用户列表和在线信息使用Redis存储
-* 支持发送连接/图片/语音/视频/文件
-* 支持Web端直接管理所有在线用户和群组
->`后续待开发功能有：视屏留言，远程演示，远程桌面,视屏群聊等`
-> 最新的版本已经可以原生支持IE系列浏览器了，基于Http长连接
-
- ----
-|安装|
- ----
-swoole扩展
-```shell
-pecl install swoole
-```
-
-swoole框架
-```shell
-composer install
-```
-
-运行
-----
-将`webroot`目录配置到Nginx/Apache的虚拟主机目录中，使`webroot/`可访问。
-
-详细部署说明
-----
-
-__1. 安装composer(php依赖包工具)__
-
-```shell
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-```
-
-注意：如果未将php解释器程序设置为环境变量PATH中，需要设置。因为composer文件第一行为#!/usr/bin/env php，并不能修改。
-更加详细的对composer说明：http://blog.csdn.net/zzulp/article/details/18981029
-
-__2. composer install__
-
-切换到PHPWebIM项目目录，执行指令composer install，如很慢则
-
-```shell
-composer install --prefer-dist
-```
-
-__3. Ningx配置__
-
-* 这里未使用swoole_framework提供的Web AppServer  
-* Apache请参照Nginx配置，自行修改实现
-* 这里使用了`im.swoole.com`作为域名，需要配置host或者改成你的域名
-
-```shell
-server {
-    listen       80;
-    server_name  im.swoole.com;
-    index index.html index.php;
-    
-    location / {
-        root   /path/to/webim/webroot;
-
-        proxy_set_header X-Real-IP $remote_addr;
-        if (!-e $request_filename) {
-            rewrite ^/(.*)$ /index.php;
-        }
-    }
-    
-    location ~ .*\.(php|php5)?$ {
-	    fastcgi_pass  127.0.0.1:9000;
-	    fastcgi_index index.php;
-	    include fastcgi.conf;
-    }
-}
-```
-`**注意：https下必须采取wss  So-有两种方案 1.采用nginx 反向代理4431端口 swoole 的端口和4431进行通讯。2.swoole 确认是否启用了openssl，是否在编译时加入了--enable-openssl的支持,然后在set 证书路径即可。两种方案选择其一就好，不过第一种方案有个潜在神坑就是你通过反向代理拿不到真实的IP地址了,这点值得注意，Nginx有办法拿到真实的ip，不懂可以私聊我，光wss的坑太多了就不一一说了。**`  
-__4. 修改配置__
-
-* 配置`configs/db.php`中数据库信息，将聊天记录存储到MySQL中
-* 配置`configs/redis.php`中的Redis服务器信息，将用户列表和信息存到Redis中
-
-表结构
-```sql
-CREATE TABLE `webim_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `addtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `name` varchar(64) COLLATE utf8mb4_bin NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `type` varchar(12) COLLATE utf8mb4_bin NOT NULL,
-  `msg` text COLLATE utf8mb4_bin NOT NULL,
-  `send_ip` varchar(20) COLLATE utf8mb4_bin,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
-```
-
-* 修改`configs/webim.php`中的选项，设置服务器的URL和端口
-```php
-$config['server'] = array(
-    //监听的HOST
-    'host' => '0.0.0.0',
-    //监听的端口
-    'port' => '9503',
-    //WebSocket的URL地址，供浏览器使用的
-    'url' => 'ws://im.xxx.com:9503',
-    //用于Comet跨域，必须设置为web页面的URL
-    //比如你的网站静态页面放在 http://im.xxx.com:8888/main.html
-    //这里就是 http://im.xxx.com:8888
-    'origin' => 'http://im.xxx.com:8888',
-);
-```
-
-* server.host server.port 项为WebIM服务器即WebSocket服务器的IP与端口，其他选择项根据具体情况修改
-* server.url对应的就是服务器IP或域名以及websocket服务的端口，这个就是提供给浏览器的WebSocket地址
-* server.origin为Comet跨域设置，必须修改origin才可以支持IE等不支持WebSocket的浏览器
-
-__5. 启动WebSocket服务器__
-
-```shell
-php server.php start 
-```
-
-IE浏览器不支持WebSocket，需要使用FlashWebSocket模拟，请修改flash_policy.php中对应的端口，然后启动flash_policy.php。
-```shell
-php webim/flash_policy.php
-```
-
-__6. 绑定host与访问聊天窗口（可选）__
-
-如果URL直接使用IP:PORT，这里不需要设置。
-
-```shell
-vi /etc/hosts
-```
-
-增加
-
-```shell
-127.0.0.1 
-```
-
-用浏览器打开：https://XXX.com
-
-快速了解项目架构
-----
-
-1.目录结构
-
-```
-+ webim
-  |- server.php //WebSocket协议服务器
-  |+ swoole.ini // WebSocket协议实现配置
-  |+ configs //配置文件目录
-  |+ webroot
-    |+ static
-    |- config.js // WebSocket配置
-  |+ log // swoole日志及WebIM日志
-  |+ src // WebIM 类文件储存目录
-    |+ Store
-      |- File.php // 默认用内存tmpfs文件系统(linux /dev/shm)存放天着数据，如果不是linux请手动修改$shm_dir
-      |- Redis.php // 将聊天数据存放到Redis
-    |- Server.php // 继承实现WebSocket的类，完成某些业务功能
-  |+ vendor // 依赖包目录
-```
-
-2.Socket Server与Socket Client通信数据格式
-
-如：登录
-
-Client发送数据
-
-```js
-{"cmd":"login","name":"xdy","avatar":"http://tp3.sinaimg.cn/1586005914/50/5649388281/1"}
-```
-
-Server响应登录
-
-```js
-{"cmd":"login", "fd": "31", "name":"xdy","avatar":"http://tp3.sinaimg.cn/1586005914/50/5649388281/1"}
-```
-
-可以看到cmd属性，client与server发送时数据都有指定，主要是用于client或者server的回调处理函数。
-
-3.需要理清的几种协议或者服务的关系
-
-http协议：超文本传输协议。单工通信，等着客户端请求之后响应。
-
-WebSocket协议：是HTML5一种新的协议，它是实现了浏览器与服务器全双工通信。服务器端口与客户端都可以推拉数据。
-
-Web服务器：此项目中可以用基于Swoole的App Server充当Web服务器，也可以用传统的nginx/apache作为web服务器
-
-Socket服务器：此项目中浏览器的WebSocket客户端连接的服务器，swoole_framework中有实现WebSocket协议PHP版本的服务器。
-
-WebSocket Client：实现html5的浏览器都支持WebSocket对象，如不支持此项目中有提供flash版本的实现。
   
 ***
 WebRtc篇 音视频部分 （重点难点部分）
@@ -2093,8 +1793,8 @@ socket.on('exit', data => {
 **官方推荐的入门文章**：http://html5rocks.com/en/tutorials/webrtc/basics（个人感觉讲的有点绕，英文不好估计很难理解）  
 **使用WebRTC搭建前端视频聊天室——入门篇**：[http://chinawebrtc.org/?p=271](http://chinawebrtc.org/?p=271)（推荐这篇中文的入门，讲的很细，它的三篇后续教程也很值得一看）  
 **WebRTC体系结构**：[http://chinawebrtc.org/?p=338](http://chinawebrtc.org/?p=338)（对整体的把握是很重要的）
-通过WebRTC实现实时视频通信：[http://chinawebrtc.org/?p=462](http://chinawebrtc.org/?p=462) （不错的教程）  
-`**官方编译教程**`：（理论后，开始实践）  
+通过WebRTC实现实时视频通信：[http://chinawebrtc.org/?p=462](http://chinawebrtc.org/?p=462) （不错的教程）
+
 **[js]** http://www.webrtc.org/native-code/development  
 **[android]** http://www.webrtc.org/native-code/android  
 **[iOS]** http://www.webrtc.org/native-code/ios  
